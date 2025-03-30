@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Secure Inbox",
+    "version": "1.0",
+    "description": "An extension to analyze the contents of emails to protect against malicious activity",
+    "author": "Amjed Ashour",
+    "permissions": [
+        "activeTab"
+    ],
+    "web_accessible_resources": [{
+        "resources": [
+            "jquery.min.js",
+            "templates/modal.html",
+            "dialog-polyfill.js"
+        ],
+        "matches": ["<all_urls>"]
+    }],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://mail.google.com/*",
+                "*://outlook.live.com/*",
+                "*://mail.yahoo.com/*",
+                "*://www.icloud.com/*",
+                "*://www.apple.com/mail/*",
+                "*://mail.aol.com/*"
+            ],
+            "js": ["scripts.js"]
+        }
+    ]
+}
