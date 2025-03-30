@@ -1,1 +1,2 @@
-pip freeze > requirements.txt
+pip install flask flask-cors openai virus_total_apis  # Install dependencies first
+pip freeze > requirements.txt                        # Generate the file
